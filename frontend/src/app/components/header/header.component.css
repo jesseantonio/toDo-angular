@@ -1,0 +1,15 @@
+header{
+    background-color: orange;
+    text-align: center;
+    padding: 50px;
+}
+h1{
+    color: white;
+}
+p{
+    padding-top: 15px;
+}
+.link-remove{
+    text-decoration: none;
+    color: white;
+}
