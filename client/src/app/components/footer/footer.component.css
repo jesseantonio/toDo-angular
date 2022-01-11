@@ -1,0 +1,9 @@
+footer{
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 0.25%;
+  padding-left: 83%;
+}
+.titulo{
+  color: black;
+}
