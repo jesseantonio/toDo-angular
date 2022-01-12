@@ -17,6 +17,12 @@ $color-secondary: orange;
   padding: 0;
 }
 
+.todo-container-list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .cta-card {
   position: relative;
   width: 50px;

@@ -1,9 +1,10 @@
-<div class="cta-card__input-box">
+<form>
+  <div class="cta-card__input-box">
   <input
     class="cta-card__input"
-    type="email"
+    type="text"
   />
-  <button class="cta-card__button">
+  <button class="cta-card__button" type="submit">
     <svg
       width="32"
       height="32"
@@ -34,4 +35,8 @@
       />
     </svg>
   </button>
+</div>
+</form>
+<div *ngFor="let tarefa of tarefas">
+  <h1>{{ tarefa.desc }}</h1>
 </div>
