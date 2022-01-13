@@ -13,15 +13,20 @@ export class BodyComponent implements OnInit {
 
   addTarefa(item: string) {
     {
-      if (this.tarefas.filter((item) => "")) {
+      console.log("testes")
+      if (typeof this.tarefas === null) {
         console.log("ERRO");
       }
+      console.log(this.tarefas.find((item) => 1))
+      console.log("testes")
 
+
+      
       this.tarefas.push({
         id: this.tarefas.length,
         name: item,
       });
-      console.log(this.tarefas.find((item) => 1))
+      
       console.log(this.tarefas);
     }
   }

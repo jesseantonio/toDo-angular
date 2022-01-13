@@ -38,7 +38,7 @@
   </button>
 </div>
 
-<div *ngFor="let tarefa of tarefas">
+<div *ngFor="let tarefa of tarefas" class="teste">
   <div class="cta-card2__input2">{{ tarefa.name }}</div>
   <button (click)="deleteTarefa(tarefa.id)" class="cta-card2__button2">
     <svg
