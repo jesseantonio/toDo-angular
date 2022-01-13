@@ -10,24 +10,27 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   tarefas: any[] = [];
-  
+
   addTarefa(item: string) {
     {
-    
+      if (this.tarefas.filter((item) => "")) {
+        console.log("ERRO");
+      }
+
       this.tarefas.push({
         id: this.tarefas.length,
         name: item,
       });
+      console.log(this.tarefas.find((item) => 1))
       console.log(this.tarefas);
     }
   }
 
   deleteTarefa(id: number) {
     {
-      this.tarefas=this.tarefas.filter(item=>item.id!==id);
+      this.tarefas = this.tarefas.filter((item) => item.id !== id);
     }
   }
-
 
   // tarefas = [
   //   {
