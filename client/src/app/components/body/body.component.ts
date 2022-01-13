@@ -1,3 +1,4 @@
+import { identifierName } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -8,20 +9,40 @@ import { Component, OnInit } from "@angular/core";
 export class BodyComponent implements OnInit {
   constructor() {}
 
-  tarefas = [
+  tarefas: any[] = [];
+  
+  addTarefa(item: string) {
     {
-      id: 1,
-      desc: "adasdasd",
-    },
+    
+      this.tarefas.push({
+        id: this.tarefas.length,
+        name: item,
+      });
+      console.log(this.tarefas);
+    }
+  }
+
+  deleteTarefa(id: number) {
     {
-      id: 2,
-      desc: "qqqqqqq",
-    },
-    {
-      id: 3,
-      desc: "aaaaaaa",
-    },
-  ];
+      this.tarefas=this.tarefas.filter(item=>item.id!==id);
+    }
+  }
+
+
+  // tarefas = [
+  //   {
+  //     id: 1,
+  //     desc: "adasdasd",
+  //   },
+  //   {
+  //     id: 2,
+  //     desc: "qqqqqqq",
+  //   },
+  //   {
+  //     id: 3,
+  //     desc: "aaaaaaa",
+  //   },
+  // ];
 
   ngOnInit(): void {}
 }

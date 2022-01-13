@@ -3,13 +3,18 @@ header{
     text-align: center;
     padding: 50px;
 }
-h1{
-    color: white;
-}
 p{
+    font-size: 15px;
     padding-top: 15px;
 }
 .link-remove{
     text-decoration: none;
     color: white;
+}
+.titulo-header{
+    font-size: 48px;
+    color: white;
+}
+.checked{
+    font-size: 64px;
 }
