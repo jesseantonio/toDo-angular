@@ -20,7 +20,9 @@ export class BodyComponent implements OnInit {
       console.log(this.tarefas.find((item) => 1))
       console.log("testes")
 
-
+      if(this.tarefas.find((item) => "")){
+        this.tarefas.splice(0, 1);
+      }
       
       this.tarefas.push({
         id: this.tarefas.length,

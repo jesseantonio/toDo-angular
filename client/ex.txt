@@ -1,0 +1,77 @@
+--- SERVICE ---
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { Person } from 'src/app/model/person';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PeopleService {
+
+  private _person = new Subject<Person>();
+
+  private baseUrl = `${environment.baseUrl}/people`
+
+  constructor( private http: HttpClient) { }
+
+  all(){
+    return this.http.get<Person>(this.baseUrl)
+  }
+
+  submit(person: Person) {
+    person.age = Number(person.age)
+    return this.http.post<Person>(this.baseUrl, person)
+  }
+
+  getPerson(): Observable<Person> {
+    return this._person.asObservable()
+  }
+
+  setPerson(person){
+    this._person.next(person);
+  }
+}
+
+--- ENVIROMENT ---
+
+export const environment = {
+  production: false,
+  baseUrl: 'https://go-dev-frontend.herokuapp.com/api'
+};
+
+--- MODEL --- 
+export interface Person {
+  name: string;
+  age: number;
+  email: string;
+  phone: string;
+}
+
+---- TS -----
+
+ ngOnInit(): void {
+    this.formPerson = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      age: ['', [Validators.min(18), Validators.max(80)]],
+      email: '',
+      phone: '',
+    });
+
+    this.keys = Object.keys(this.formPerson.value);
+  }
+
+  clickOnSubmit() {
+    if (this.formPerson.valid) {
+      const person = this.formPerson.value;
+      // this.submit.emit(person)
+      this.peopleService.submit(person).subscribe((value) => {
+      this.peopleService.setPerson(value);
+        this.formPerson.reset();
+      });
+    }
+  }
+
+
