@@ -1,19 +1,24 @@
 {
-  "products": [
+  "tasks": [
     {
       "id": 1,
-      "name": "Caneta BIC Preta",
-      "price": 5.89
+      "desc": "Dormir"
     },
     {
       "id": 2,
-      "name": "Iphone X",
-      "price": 10.000
+      "desc": "Comer"
     },
     {
       "id": 3,
-      "name": "Mouse Razer",
-      "price": 255.89
+      "desc": "Fazer tarefas"
+    },
+    {
+      "id": 4,
+      "desc": "Escovar os dentes"
+    },
+    {
+      "id": 5,
+      "desc": "Reunião"
     }
   ]
 }
